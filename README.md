@@ -85,6 +85,8 @@ $ rsync --exclude target -r . hack@<team>:/solution
 $ ssh hack@team
 ```
 
+> Having DNS issues? Try using `nmap` and use the car's IP directly.
+
 ## Positioning the drone
 
 ### Installing `aviator`
