@@ -11,7 +11,7 @@ use cheats::approaching::Hint;
 use cheats::positioning::Position;
 use cheats::TeamColors;
 
-const CAR: Color = Color::Blue;
+const CAR: Color = Color::Red;
 const TARGET: Color = Color::Green;
 
 #[allow(unused)]
