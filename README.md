@@ -102,3 +102,4 @@ You need to position the drone yourself (judging the FOV).
 
 You can open `http://<team>:3000/camera` to see the drones image and use
 `./scripts/aviate <team> <command>` to position it manually.
+
