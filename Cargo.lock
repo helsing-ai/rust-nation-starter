@@ -878,7 +878,7 @@ checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
 [[package]]
 name = "hs-hackathon"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#a3c0ce7ed83a55a1a48a3befad23b30595696e22"
+source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
 dependencies = [
  "clap",
  "color-eyre",
@@ -897,7 +897,7 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-car"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#a3c0ce7ed83a55a1a48a3befad23b30595696e22"
+source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
 dependencies = [
  "eyre",
  "futures",
@@ -913,7 +913,7 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-drone"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#a3c0ce7ed83a55a1a48a3befad23b30595696e22"
+source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
 dependencies = [
  "axum",
  "clap",
@@ -940,7 +940,7 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-macros"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#a3c0ce7ed83a55a1a48a3befad23b30595696e22"
+source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
 dependencies = [
  "lazy_static",
  "proc-macro2",
@@ -951,7 +951,7 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-vision"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#a3c0ce7ed83a55a1a48a3befad23b30595696e22"
+source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
 dependencies = [
  "crossterm",
  "eyre",
