@@ -1,5 +1,8 @@
 mod cheats;
 
+use std::f32::consts::PI;
+use std::time::Duration;
+
 use hs_hackathon::prelude::*;
 
 use cheats::angles::Vector;
@@ -48,6 +51,23 @@ impl MapState {
         wheels: &mut WheelOrientation,
     ) -> eyre::Result<Vector> {
         unimplemented!()
+    async fn angle_to_target(
+        drone: &mut Camera,
+        motor: &mut MotorSocket,
+        wheels: &mut WheelOrientation,
+    ) -> eyre::Result<Angle> {
+        const APPROACHING_DURATION: Duration = Duration::from_secs(2);
+
+        let old = Self::infer(drone).await?;
+        motor
+            .move_for(Velocity::forward(), APPROACHING_DURATION)
+            .await?;
+        let new = Self::infer(drone).await?;
+
+        let target_vector = Vector::from((new.target, new.car));
+        let car_vector = Vector::from((old.car, new.car));
+
+        Angle::try_from(car_vector.angle(target_vector) as f32)
     }
 }
 
@@ -76,7 +96,10 @@ impl State {
     ) -> eyre::Result<()> {
         match self {
             State::Turning => loop {
-                unimplemented!()
+                let angle = MapState::angle_to_target(drone, motor, wheels).await?;
+                wheels.set(angle).await?;
+
+                *self = Self::Approaching;
             },
             State::Approaching => {
                 let hint = cheats::approaching::auto(
