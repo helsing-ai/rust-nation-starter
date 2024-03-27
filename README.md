@@ -23,7 +23,7 @@ our hackathon and we are glad to have you onboard. Enjoy!
 
 - You are going to work in **teams of 3-4** people.
 - You may not move the drone outside of the enclosure
-- Connect to the `hs-rust-nation` wifi
+- Connect to the `hs-rust-nation` wifi - please ask for the password from one of the team.
 
 ## Challenge
 
@@ -52,20 +52,20 @@ and your computer vision algorithm.
 
 <br>
 
-The car is equipped with a raspberry pi that has access to the camera stream of
+The car is equipped with a Raspberry Pi that has access to the camera stream of
 the drone and the cars hardware (e.g. you can drive the car from the raspberry
 pi).
 
 Given the above setup and the libraries provided by helsing you should write
 the highlevel application logic to:
 
-- Identify your cars position
+- Identify your car's position
 - Identify the orientation of the car
 - Move the car into the color coded target area
 
-> Please Note: You are expected to develop this on your own laptop. Helsing
-> provides you libraries and deployment tooling, aswell as the drone and the
-> car, to make the above achievable in 60-90 minutes.
+> Please note: You are expected to develop this on your own laptop. Helsing
+> provides you libraries and deployment tooling, as well as the drone and the
+> car, to make the above achievable in 1-2 hours.
 
 ## Quickstart
 
