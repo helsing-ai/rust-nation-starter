@@ -22,7 +22,7 @@ impl MapState {
         loop {
             let frame = drone.snapshot().await?;
 
-            let leds = hackathon::vision::detect(&frame, &LedDetectionConfig::default())?;
+            let leds = hs_hackathon::vision::detect(&frame, &LedDetectionConfig::default())?;
 
             let Some(car) = leds.iter().find(|led| led.color == CAR) else {
                 continue;
@@ -177,7 +177,7 @@ impl State {
     }
 }
 
-#[hackathon::main]
+#[hs_hackathon::main]
 async fn main() -> eyre::Result<()> {
     let mut wheels = WheelOrientation::new().await?;
     let mut motor = MotorSocket::open().await?;
