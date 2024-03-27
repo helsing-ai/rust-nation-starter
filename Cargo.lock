@@ -878,7 +878,8 @@ checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
 [[package]]
 name = "hs-hackathon"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cc1ffc2361744e78d7a919f2dc503e1cabae47bdbc63ab415459c65872688ec4"
 dependencies = [
  "clap",
  "color-eyre",
@@ -897,7 +898,8 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-car"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13c771547b2b5c0f542ecaea2292af716c613a69d7ec6d6046c5ea51f3d5ca8d"
 dependencies = [
  "eyre",
  "futures",
@@ -913,7 +915,8 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-drone"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "19cff5ad0cef8f83657413c50f84a4db760a53f6950079d5d370c5ffed84f29e"
 dependencies = [
  "axum",
  "clap",
@@ -940,7 +943,8 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-macros"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a775a028e861fa1a3a331faa348db4a8927f328cc5da358ad99772492021f55e"
 dependencies = [
  "lazy_static",
  "proc-macro2",
@@ -951,7 +955,8 @@ dependencies = [
 [[package]]
 name = "hs-hackathon-vision"
 version = "0.1.0"
-source = "git+https://github.com/helsing-ai/rust-nation#47a8cf7d462818c877ed0be2c143c0ba202aa569"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3e13ed9fa5a3d25d2f0cd808d5c5e82ca1e00358a22b8c01db9cca6476581671"
 dependencies = [
  "crossterm",
  "eyre",

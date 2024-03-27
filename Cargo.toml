@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-hs-hackathon = { git = "https://github.com/helsing-ai/rust-nation" }
+hs-hackathon = "0.1.0"
