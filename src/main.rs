@@ -7,8 +7,8 @@ use cheats::approaching::Hint;
 use cheats::positioning::Position;
 use cheats::TeamColors;
 
-const CAR: Color = Color::Red;
-const TARGET: Color = Color::Blue;
+const CAR: Color = Color::Blue;
+const TARGET: Color = Color::Green;
 
 #[allow(unused)]
 struct MapState {
@@ -22,8 +22,8 @@ impl MapState {
         let frame = drone.snapshot().await?;
         let leds = detect(&frame.0, &LedDetectionConfig::default())?;
 
-        let target = leds.iter().find(|led| led.color == Color::Green).expect("Found the target");
-        let car = leds.iter().find(|led| led.color == Color::Blue).expect("Found the car");
+        let target = leds.iter().find(|led| led.color == TARGET).expect("Found the target");
+        let car = leds.iter().find(|led| led.color == CAR).expect("Found the car");
 
         let target = Position {
             x: target.bbox.x_min(),
