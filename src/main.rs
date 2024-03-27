@@ -3,6 +3,7 @@ mod cheats;
 use std::f32::consts::PI;
 use std::time::Duration;
 
+use hs_hackathon::prelude::eyre::Error;
 use hs_hackathon::prelude::*;
 
 use cheats::angles::Vector;
@@ -19,18 +20,35 @@ struct MapState {
     target: Position,
 }
 
+pub enum OurError {
+    EyreError(eyre::Report),
+    FindError(&'static str),
+}
+
+impl From<eyre::Report> for OurError {
+    fn from(e: eyre::Error) -> Self {
+        Self::EyreError(e)
+    }
+}
+
 #[allow(unused)]
 impl MapState {
-    pub async fn infer(drone: &mut Camera) -> eyre::Result<Self> {
+    pub async fn infer(drone: &mut Camera) -> Result<Self, OurError> {
         let frame = drone.snapshot().await?;
         let leds = detect(&frame.0, &LedDetectionConfig::default())?;
 
-        let target = leds.iter().find(|led| led.color == TARGET).expect("Found the target");
-        let car = leds.iter().find(|led| led.color == CAR).expect("Found the car");
+        let target = leds
+            .iter()
+            .find(|led| led.color == TARGET)
+            .ok_or_else(|| OurError::FindError("target"))?;
+        let car = leds
+            .iter()
+            .find(|led| led.color == CAR)
+            .ok_or_else(|| OurError::FindError("car"))?;
 
         let target = Position {
             x: target.bbox.x_min(),
-            y: target.bbox.y_min()
+            y: target.bbox.y_min(),
         };
 
         let car = Position {
@@ -38,10 +56,7 @@ impl MapState {
             y: car.bbox.y_min(),
         };
 
-        Ok(Self {
-            car,
-            target,
-        })
+        Ok(Self { car, target })
     }
 
     async fn car_orientation(
@@ -51,6 +66,8 @@ impl MapState {
         wheels: &mut WheelOrientation,
     ) -> eyre::Result<Vector> {
         unimplemented!()
+    }
+
     async fn angle_to_target(
         drone: &mut Camera,
         motor: &mut MotorSocket,
@@ -58,11 +75,23 @@ impl MapState {
     ) -> eyre::Result<Angle> {
         const APPROACHING_DURATION: Duration = Duration::from_secs(2);
 
-        let old = Self::infer(drone).await?;
-        motor
-            .move_for(Velocity::forward(), APPROACHING_DURATION)
-            .await?;
-        let new = Self::infer(drone).await?;
+        let (old, new) = loop {
+            let old = match Self::infer(drone).await {
+                Ok(old) => old,
+                Err(_) => continue,
+            };
+
+            motor
+                .move_for(Velocity::forward(), APPROACHING_DURATION)
+                .await?;
+
+            let new = match Self::infer(drone).await {
+                Ok(new) => new,
+                Err(_) => continue,
+            } ;
+
+            break (old, new);
+        };
 
         let target_vector = Vector::from((new.target, new.car));
         let car_vector = Vector::from((old.car, new.car));
