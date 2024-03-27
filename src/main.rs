@@ -1,8 +1,11 @@
-use hs_hackathon::cheats::angles::Vector;
-use hs_hackathon::cheats::approaching::Hint;
-use hs_hackathon::cheats::positioning::Position;
-use hs_hackathon::cheats::TeamColors;
-use hs_hackathon::{cheats, prelude::*};
+mod cheats;
+
+use hs_hackathon::prelude::*;
+
+use cheats::angles::Vector;
+use cheats::approaching::Hint;
+use cheats::positioning::Position;
+use cheats::TeamColors;
 
 const CAR: Color = Color::Red;
 const TARGET: Color = Color::Blue;
