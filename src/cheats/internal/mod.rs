@@ -12,7 +12,7 @@ pub(crate) async fn infer(
     loop {
         let frame = camera.snapshot().await?;
 
-        let leds = detect(&frame, &LedDetectionConfig::default())?;
+        let leds = detect(&frame.0, &LedDetectionConfig::default())?;
 
         let Some(car) = leds.iter().find(|led| led.color == colors.car) else {
             continue;
@@ -22,6 +22,6 @@ pub(crate) async fn infer(
             continue;
         };
 
-        Ok((car.bbox, target.bbox))
+        return Ok((car.bbox, target.bbox));
     }
 }
