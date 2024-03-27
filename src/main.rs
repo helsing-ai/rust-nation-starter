@@ -19,7 +19,26 @@ struct MapState {
 #[allow(unused)]
 impl MapState {
     pub async fn infer(drone: &mut Camera) -> eyre::Result<Self> {
-        unimplemented!()
+        let frame = drone.snapshot().await?;
+        let leds = detect(&frame.0, &LedDetectionConfig::default())?;
+
+        let target = leds.iter().find(|led| led.color == Color::Green).expect("Found the target");
+        let car = leds.iter().find(|led| led.color == Color::Blue).expect("Found the car");
+
+        let target = Position {
+            x: target.bbox.x_min(),
+            y: target.bbox.y_min()
+        };
+
+        let car = Position {
+            x: car.bbox.x_min(),
+            y: car.bbox.y_min(),
+        };
+
+        Ok(Self {
+            car,
+            target,
+        })
     }
 
     async fn car_orientation(
