@@ -90,7 +90,7 @@ $ ssh hack@team
 ### Installing `aviator`
 
 ```
-$ ssh hack@team "cargo instal --git github.com/helsing-ai/rust-nation --bin aviator
+$ ssh hack@team "cargo install --git github.com/helsing-ai/rust-nation --bin aviator
 $ aviator
 ```
 
