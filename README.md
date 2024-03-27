@@ -87,18 +87,7 @@ $ ssh hack@team
 
 ## Positioning the drone
 
-### Installing `aviator`
+You need to position the drone yourself using `./scripts/aviate` (judging the FOV).
 
-```
-$ ssh hack@team "cargo instal --git github.com/helsing-ai/rust-nation --bin aviator
-$ aviator
-```
-
-### Using `aviator`
-
-To use aviator you should run it at all times at is takes care of managing your drone!
-
-You need to position the drone yourself (judging the FOV).
-
-You can open `http://<team>:3000/camera` to see the drones image and use
-`./scripts/aviate <team> <command>` to position it manually.
+You can open `http://<car-name>:3000/camera` to see the drones image and use
+`./scripts/aviate <car-name> <command>` to position it manually.

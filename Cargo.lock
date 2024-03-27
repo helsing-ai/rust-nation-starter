@@ -877,9 +877,9 @@ checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
 
 [[package]]
 name = "hs-hackathon"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc1ffc2361744e78d7a919f2dc503e1cabae47bdbc63ab415459c65872688ec4"
+checksum = "78decf3a5b4ee72a64ed4f8c633b6f51e57e889a46adcf8da2dac5152a0b8f3e"
 dependencies = [
  "clap",
  "color-eyre",
@@ -897,9 +897,9 @@ dependencies = [
 
 [[package]]
 name = "hs-hackathon-car"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13c771547b2b5c0f542ecaea2292af716c613a69d7ec6d6046c5ea51f3d5ca8d"
+checksum = "d7353eee67e714b84d00484d5d58eb73f6ad637a279e20744fd38b80eea36347"
 dependencies = [
  "eyre",
  "futures",
@@ -914,9 +914,9 @@ dependencies = [
 
 [[package]]
 name = "hs-hackathon-drone"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "19cff5ad0cef8f83657413c50f84a4db760a53f6950079d5d370c5ffed84f29e"
+checksum = "91998263399636879bc64396476548e01bfbd39a9c63782a7ae1ab88d5c44871"
 dependencies = [
  "axum",
  "clap",
@@ -942,9 +942,9 @@ dependencies = [
 
 [[package]]
 name = "hs-hackathon-macros"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a775a028e861fa1a3a331faa348db4a8927f328cc5da358ad99772492021f55e"
+checksum = "c2d3fcc5602fc606d71f28017eaab022a92f1a7d9b573b4a88a6dd1c7fa69e1a"
 dependencies = [
  "lazy_static",
  "proc-macro2",
@@ -954,13 +954,12 @@ dependencies = [
 
 [[package]]
 name = "hs-hackathon-vision"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e13ed9fa5a3d25d2f0cd808d5c5e82ca1e00358a22b8c01db9cca6476581671"
+checksum = "481cd0e475d1ca0fda586f5854a6aad486a14d8f1b4d2fa11d29a5baa51866ca"
 dependencies = [
  "crossterm",
  "eyre",
- "hs-hackathon-drone",
  "image",
  "imageproc",
  "log",
