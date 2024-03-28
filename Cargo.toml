@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-hs-hackathon = "0.1.2"
+hs-hackathon = "0.1.4"
