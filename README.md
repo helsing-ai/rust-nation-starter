@@ -73,10 +73,11 @@ the highlevel application logic to:
 [template](https://github.com/helsing-ai/rust-nation-starter) in order to have
 a seamless deployment experience**
 
-- Form a team of 3-4 people and obtain your teams hardware from helsing staff.
+- Form a team of 3-4 people and obtain your team's hardware from helsing staff.
 - Fork the repository and grant your team members access
 - Clone your teams repository and do a test deployment (to verify everythign works)
 - Start hacking!
+- When you're ready to start driving the car, please ask and we'll connect the power supply.
 
 ## Deploying
 
